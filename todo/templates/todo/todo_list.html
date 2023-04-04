@@ -12,17 +12,16 @@
     <table>
         {% for item in items %}
             <tr>
-            {% if %}
-            {% else %}
-            {% endif %}    
-                <td>{{ item.name }}</td>
-                <td>{{ item.done }}</td>
-             </tr>
-            {% empty %}
-            <tr><td>You have nothing to do</td></tr>
-
+                {% if item.done %}
+                    <td><strike>{{ item.name }}</strike></td>
+                {% else %}
+                    <td>{{ item.name }}</td>
+                {% endif %}
+            </tr>
         {% endfor %}
     </table>
+
+    <a href="/add">Add an Item</a>
 
 
 
